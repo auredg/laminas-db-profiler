@@ -1,10 +1,10 @@
 {
-    "name": "stefano/stefano-db-profiler",
-    "description": "A ZF2, ZF3 module to profile db queries using Zend\\Db\\Adapter\\Profiler\\Profiler and write them to ZendDeveloperTools toolbar.",
+    "name": "aureliendoignon/stefano-db-profiler",
+    "description": "A Laminas module to profile db queries using Laminas\\Db\\Adapter\\Profiler\\Profiler and write them to Laminas\\DeveloperTools toolbar.",
     "version": "0.2.0",
     "license": "BSD-3-Clause",
     "keywords": [
-        "database", "profiler", "zf2", "zf3", "module"
+        "database", "profiler", "laminas", "module"
     ],
     "support": {
         "source": "https://github.com/bartko-s/",
@@ -14,21 +14,21 @@
     "authors": [
         {
             "name": "Štefan Bartko"
+        },
+        {
+            "name": "Aurélien Doignon"
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-        "zendframework/zend-db": "2.*",
-        "zendframework/zend-developer-tools": "*"
+        "php": ">=7.0",
+        "laminas/laminas-db": "2.*",
+        "laminas/laminas-developer-tools": "*"
     },
     "require-dev": {
     },
     "autoload": {
-        "psr-0": {
-            "StefanoDbProfiler\\": "src/"
-        },
-        "classmap": [
-            "./src/"
-        ]
+        "psr-4": {
+			"StefanoDbProfiler\\": "src/"
+		}
     }
 }

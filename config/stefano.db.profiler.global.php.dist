@@ -5,7 +5,7 @@ return array(
          * List of all Db adapters which you want to profile
          */
         'dbAdapterServiceManagerKey' => array(
-            'Zend\Db\Adapter\Adapter',
+            'Laminas\Db\Adapter\Adapter',
         ),
     ),
 );

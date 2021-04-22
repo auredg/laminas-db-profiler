@@ -1,12 +1,12 @@
 <?php
 namespace StefanoDbProfiler\Options;
 
-use Zend\Stdlib\AbstractOptions;
+use Laminas\Stdlib\AbstractOptions;
 
 class ModuleOptions
     extends AbstractOptions
 {
-    private $dbAdapterServiceManagerKey = array();
+    private $dbAdapterServiceManagerKey = [];
 
     /**
      * @param array|string $keyName

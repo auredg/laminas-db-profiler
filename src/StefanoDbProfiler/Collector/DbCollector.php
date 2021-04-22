@@ -1,9 +1,9 @@
 <?php
 namespace StefanoDbProfiler\Collector;
 
-use Zend\Mvc\MvcEvent;
-use Zend\Db\Adapter\Profiler\Profiler;
-use ZendDeveloperTools\Collector\CollectorInterface;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Db\Adapter\Profiler\Profiler;
+use Laminas\DeveloperTools\Collector\CollectorInterface;
 
 class DbCollector
     implements CollectorInterface

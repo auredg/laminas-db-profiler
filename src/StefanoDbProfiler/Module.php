@@ -1,9 +1,9 @@
 <?php
 namespace StefanoDbProfiler;
 
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
-use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
-use Zend\ModuleManager\Feature\DependencyIndicatorInterface;
+use Laminas\ModuleManager\Feature\ConfigProviderInterface;
+use Laminas\ModuleManager\Feature\AutoloaderProviderInterface;
+use Laminas\ModuleManager\Feature\DependencyIndicatorInterface;
 
 class Module
     implements ConfigProviderInterface,
@@ -15,18 +15,18 @@ class Module
     }
 
     public function getAutoloaderConfig() {
-        return array(
-            'Zend\Loader\StandardAutoloader' => array(
-                'namespaces' => array(
+        return [
+            'Laminas\Loader\StandardAutoloader' => [
+                'namespaces' => [
                     __NAMESPACE__ => __DIR__,
-                ),
-            ),
-        );
+                ],
+            ],
+        ];
     }
 
     public function getModuleDependencies() {
-        return array(
-            'ZendDeveloperTools'
-        );
+        return [
+            'Laminas\\DeveloperTools'
+        ];
     }
 }

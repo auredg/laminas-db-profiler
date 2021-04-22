@@ -1,14 +1,7 @@
-[DEPRECATED] Db Profiler
+Laminas Db Profiler
 ========================
 
-This library is NOT MAINTAINED anymore please use [bjyoungblood/BjyProfiler
-](https://github.com/bjyoungblood/BjyProfiler) instead.
-
-| Dependencies |
-| :---: |
-| [![Dependency Status](https://www.versioneye.com/user/projects/5526ab482ced4f6dfd0000ca/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5526ab482ced4f6dfd0000ca) |
-
-A ZF2, ZF3 module to profile db queries using ```\Zend\Db\Adapter\Profiler\Profiler``` and write them to ZendDeveloperTools toolbar
+A Laminas module to profile db queries using ```\Laminas\Db\Adapter\Profiler\Profiler``` and write them to LaminasDeveloperTools toolbar
 
 ![Db Profiler](./doc/images/snapshot.png)
 
@@ -23,8 +16,8 @@ Features
 Dependencies
 ------------
 
-- Zend Framework 2 or Zend Framework 3 
-- Zend Developer Tools
+- Laminas Db
+- Laminas Developer Tools
 
 Instalation
 ---
@@ -47,7 +40,7 @@ Instalation
 )
 ```
 
-- Library uses ```Zend\Db\Adapter\Adapter``` service key. If you are uses different key for your Db Adapter you must set it by configuration options.
+- Library uses ```Laminas\Db\Adapter\Adapter``` service key. If you are uses different key for your Db Adapter you must set it by configuration options.
 
 Options
 -------
@@ -56,4 +49,4 @@ Configuration options are available in ```config/stefano.db.profiler.global.php.
 
 Options available :
 
-- dbAdapterServiceManagerKey : List of all Db Adapter service manager keys which you want to profile. Zend\Db\Adapter\Adapter is default
+- dbAdapterServiceManagerKey : List of all Db Adapter service manager keys which you want to profile. Laminas\Db\Adapter\Adapter is default

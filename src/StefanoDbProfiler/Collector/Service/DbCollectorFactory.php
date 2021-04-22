@@ -2,26 +2,28 @@
 namespace StefanoDbProfiler\Collector\Service;
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use StefanoDbProfiler\Collector\DbCollector;
 use StefanoDbProfiler\Options\ModuleOptions;
 
 class DbCollectorFactory
     implements FactoryInterface
 {
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null) {
-        return $this->createService($container);
-    }
-
-    public function createService(ServiceLocatorInterface $serviceLocator) {
-        $moduleOptions = $this->getModuleOptions($serviceLocator);
+    /**
+     * @param ContainerInterface $container
+     * @param string $requestedName
+     * @param array $options
+     * @return DbCollector
+     */
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null) : DbCollector
+    {
+        $moduleOptions = $this->getModuleOptions($container);
 
         $dbCollector = new DbCollector();
 
         foreach($moduleOptions->getDbAdapterServiceManagerKey() as $adapterServiceKey) {
-            if($serviceLocator->has($adapterServiceKey)) {
-                $profiler = $serviceLocator->get($adapterServiceKey)
+            if($container->has($adapterServiceKey)) {
+                $profiler = $container->get($adapterServiceKey)
                                            ->getProfiler();
                 if(null != $profiler) {
                     $dbCollector->addProfiler($adapterServiceKey, $profiler);
@@ -33,10 +35,11 @@ class DbCollectorFactory
     }
 
     /**
-     * @param ServiceLocatorInterface $serviceLocator
+     * @param ContainerInterface $container
      * @return ModuleOptions
      */
-    private function getModuleOptions(ServiceLocatorInterface $serviceLocator) {
-        return $serviceLocator->get('StefanoDbProfiler\Options\ModuleOptions');
+    private function getModuleOptions(ContainerInterface $container) : ModuleOptions
+    {
+        return $container->get('StefanoDbProfiler\Options\ModuleOptions');
     }
 }

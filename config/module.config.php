@@ -29,6 +29,6 @@ return array(
         ),
     ),
     'stefano_db_profiler' => array(
-        'dbAdapterServiceManagerKey' => 'Zend\Db\Adapter\Adapter',
+        'dbAdapterServiceManagerKey' => 'Laminas\Db\Adapter\Adapter',
     ),
 );
