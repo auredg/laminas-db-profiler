@@ -26,7 +26,7 @@ Instalation
 
 - run ```composer update```
 
-- Add module ``` StefanoDbProfiler ``` to your application.config.php
+- Add module ``` StfnLaminasDbProfiler ``` to your application.config.php
 
 - Enable profiler for your Db Adapter or Adapters
 

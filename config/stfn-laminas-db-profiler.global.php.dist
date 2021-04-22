@@ -1,11 +1,12 @@
 <?php
-return array(
-    'stefano_db_profiler' => array(
+
+return [
+    'stfn_laminas_db_profiler' => [
         /**
          * List of all Db adapters which you want to profile
          */
-        'dbAdapterServiceManagerKey' => array(
+        'dbAdapterServiceManagerKey' => [
             'Laminas\Db\Adapter\Adapter',
-        ),
-    ),
-);
+        ],
+    ],
+];

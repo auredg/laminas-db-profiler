@@ -1,34 +1,37 @@
 <?php
-return array(
-    'service_manager' => array(
-        'factories' => array(
-            'StefanoDbProfiler\Collector\DbCollector'
-                => '\StefanoDbProfiler\Collector\Service\DbCollectorFactory',
-            'StefanoDbProfiler\Options\ModuleOptions'
-                => 'StefanoDbProfiler\Options\Service\ModuleOptionsFactory',
-        ),
-    ),
-    'view_manager' => array(
-        'template_map' => array(
-            'stefano-db-profiler/toolbar/db'
-                => __DIR__ . '/../view/stefano-db-profiler/toolbar/db.phtml',
-        ),
-    ),
-    'zenddevelopertools' => array(
-        'profiler' => array(
-            'collectors' => array(
-                'StefanoDbProfiler'
-                    => 'StefanoDbProfiler\Collector\DbCollector',
-            ),
-        ),
-        'toolbar' => array(
-            'entries' => array(
-                'StefanoDbProfiler'
-                    => 'stefano-db-profiler/toolbar/db',
-            ),
-        ),
-    ),
-    'stefano_db_profiler' => array(
-        'dbAdapterServiceManagerKey' => 'Laminas\Db\Adapter\Adapter',
-    ),
-);
+
+use Laminas\Db\Adapter\Adapter;
+
+use StfnLaminasDbProfiler\Collector\DbCollector;
+use StfnLaminasDbProfiler\Options\ModuleOptions;
+use StfnLaminasDbProfiler\Collector\Service\DbCollectorFactory;
+use StfnLaminasDbProfiler\Options\Service\ModuleOptionsFactory;
+
+return [
+    'service_manager' => [
+        'factories' => [
+            DbCollector::class => DbCollectorFactory::class,
+            ModuleOptions::class => ModuleOptionsFactory::class,
+        ],
+    ],
+    'view_manager' => [
+        'template_map' => [
+            'stfn-laminas-db-profiler/toolbar/db' => __DIR__ . '/../view/stfn-laminas-db-profiler/toolbar/db.phtml',
+        ],
+    ],
+    'laminas-developer-tools' => [
+        'profiler' => [
+            'collectors' => [
+                'StfnLaminasDbProfiler' => DbCollector::class,
+            ],
+        ],
+        'toolbar' => [
+            'entries' => [
+                'StfnLaminasDbProfiler' => 'stfn-laminas-db-profiler/toolbar/db',
+            ],
+        ],
+    ],
+    'stfn_laminas_db_profiler' => [
+        'dbAdapterServiceManagerKey' => Adapter::class,
+    ],
+];

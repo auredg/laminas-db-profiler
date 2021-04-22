@@ -1,16 +1,16 @@
 {
-    "name": "aureliendoignon/stefano-db-profiler",
+    "name": "aureliendoignon/stfn-laminas-db-profiler",
     "description": "A Laminas module to profile db queries using Laminas\\Db\\Adapter\\Profiler\\Profiler and write them to Laminas\\DeveloperTools toolbar.",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "license": "BSD-3-Clause",
     "keywords": [
         "database", "profiler", "laminas", "module"
     ],
     "support": {
-        "source": "https://github.com/bartko-s/",
-        "issues": "https://github.com/bartko-s/stefano-db-profiler/issues"
+        "source": "https://github.com/aureliendoignon/",
+        "issues": "https://github.com/aureliendoignon/stefano-db-profiler/issues"
     },
-    "homepage": "https://github.com/bartko-s/stefano-db-profiler",
+    "homepage": "https://github.com/aureliendoignon/stefano-db-profiler",
     "authors": [
         {
             "name": "Štefan Bartko"
@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.3",
         "laminas/laminas-db": "2.*",
         "laminas/laminas-developer-tools": "*"
     },
@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-			"StefanoDbProfiler\\": "src/"
+			"StfnLaminasDbProfiler\\": "src/StfnLaminasDbProfiler/"
 		}
     }
 }

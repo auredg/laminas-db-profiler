@@ -1,9 +1,9 @@
 <?php
-namespace StefanoDbProfiler\Options\Service;
+namespace StfnLaminasDbProfiler\Options\Service;
 
 use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
-use StefanoDbProfiler\Options\ModuleOptions;
+use StfnLaminasDbProfiler\Options\ModuleOptions;
 
 class ModuleOptionsFactory
     implements FactoryInterface
@@ -17,6 +17,6 @@ class ModuleOptionsFactory
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null) : ModuleOptions
     {
         $config = $container->get('Config');
-        return new ModuleOptions($config['stefano_db_profiler'] ?? []);
+        return new ModuleOptions($config['stfn_laminas_db_profiler'] ?? []);
     }
 }

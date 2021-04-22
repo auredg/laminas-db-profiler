@@ -1,10 +1,10 @@
 <?php
-namespace StefanoDbProfiler\Collector\Service;
+namespace StfnLaminasDbProfiler\Collector\Service;
 
 use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
-use StefanoDbProfiler\Collector\DbCollector;
-use StefanoDbProfiler\Options\ModuleOptions;
+use StfnLaminasDbProfiler\Collector\DbCollector;
+use StfnLaminasDbProfiler\Options\ModuleOptions;
 
 class DbCollectorFactory
     implements FactoryInterface
@@ -20,7 +20,7 @@ class DbCollectorFactory
         $moduleOptions = $this->getModuleOptions($container);
 
         $dbCollector = new DbCollector();
-
+        
         foreach($moduleOptions->getDbAdapterServiceManagerKey() as $adapterServiceKey) {
             if($container->has($adapterServiceKey)) {
                 $profiler = $container->get($adapterServiceKey)
@@ -30,7 +30,7 @@ class DbCollectorFactory
                 }
             }
         }
-
+        
         return $dbCollector;
     }
 
@@ -40,6 +40,6 @@ class DbCollectorFactory
      */
     private function getModuleOptions(ContainerInterface $container) : ModuleOptions
     {
-        return $container->get('StefanoDbProfiler\Options\ModuleOptions');
+        return $container->get(ModuleOptions::class);
     }
 }

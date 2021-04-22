@@ -1,5 +1,5 @@
 <?php
-namespace StefanoDbProfiler\Options;
+namespace StfnLaminasDbProfiler\Options;
 
 use Laminas\Stdlib\AbstractOptions;
 

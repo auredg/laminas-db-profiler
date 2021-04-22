@@ -1,5 +1,5 @@
 <?php
-namespace StefanoDbProfiler\Collector;
+namespace StfnLaminasDbProfiler\Collector;
 
 use Laminas\Mvc\MvcEvent;
 use Laminas\Db\Adapter\Profiler\Profiler;
@@ -8,20 +8,24 @@ use Laminas\DeveloperTools\Collector\CollectorInterface;
 class DbCollector
     implements CollectorInterface
 {
-    protected $profilers = array();
+    protected $profilers = [];
 
-    public function getName() {
-        return 'StefanoDbProfiler';
+    public function getName() : string
+    {
+        return 'StfnLaminasDbProfiler';
     }
 
-    public function getPriority() {
-        return 10;
+    public function getPriority() : int
+    {
+        return 20;
     }
 
-    public function collect(MvcEvent $mvcEvent) {
+    public function collect(MvcEvent $mvcEvent) : void
+    {
     }
 
-    public function getQueryCount($queryType = null) {
+    public function getQueryCount($queryType = null) : int
+    {
         $profiles = $this->getProfiles();
 
         $count = 0;
@@ -46,7 +50,8 @@ class DbCollector
         return $count;
     }
 
-    public function getQueryTime($queryType = null) {
+    public function getQueryTime($queryType = null) : int
+    {
         $profiles = $this->getProfiles();
 
         $time = 0;
@@ -76,29 +81,33 @@ class DbCollector
      * @param string $adapterName
      * @param Profiler $profiler
      */
-    public function addProfiler($adapterName, Profiler $profiler) {
+    public function addProfiler(string $adapterName, Profiler $profiler) : void
+    {
         $this->profilers[$adapterName] = $profiler;
     }
 
     /**
-     * @return array Profilers
+     * @return Profiler[]
      */
-    public function getProfilers() {
+    public function getProfilers() : array
+    {
         return $this->profilers;
     }
 
     /**
-     * @return bolean
+     * @return boolean
      */
-    public function hasProfiler() {
+    public function hasProfiler() : bool
+    {
         return (1 <= count($this->profilers)) ? true : false;
     }
 
     /**
      * @return array
      */
-    public function getProfiles() {
-        $profiles = array();
+    public function getProfiles() : array
+    {
+        $profiles = [];
 
         foreach($this->getProfilers() as $adapterServiceKey => $profiler) {
             foreach($profiler->getProfiles() as $query) {
