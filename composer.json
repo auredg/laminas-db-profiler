@@ -1,16 +1,16 @@
 {
-    "name": "aure/laminas-db-profiler",
+    "name": "auredg/laminas-db-profiler",
     "description": "A Laminas module to profile db queries using Laminas\\Db\\Adapter\\Profiler\\Profiler and write them to Laminas\\DeveloperTools toolbar.",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "license": "BSD-3-Clause",
     "keywords": [
         "database", "profiler", "laminas", "module"
     ],
     "support": {
-        "source": "https://github.com/aureliendoignon/",
-        "issues": "https://github.com/aureliendoignon/stefano-db-profiler/issues"
+        "source": "https://github.com/auredg/",
+        "issues": "https://github.com/auredg/laminas-db-profiler/issues"
     },
-    "homepage": "https://github.com/aureliendoignon/stefano-db-profiler",
+    "homepage": "https://github.com/auredg/laminas-db-profiler",
     "authors": [
         {
             "name": "Štefan Bartko"

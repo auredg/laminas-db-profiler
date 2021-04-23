@@ -22,7 +22,7 @@ Dependencies
 Instalation
 ---
 
-- Add following line to your composer.json file ``` "aureliendoignon/stfn-laminas-db-profiler": "*" ```
+- Add following line to your composer.json file ``` "auredg/laminas-db-profiler": "*" ```
 
 - run ```composer update```
 
@@ -45,7 +45,7 @@ Instalation
 Options
 -------
 
-Configuration options are available in ```config/stfn-laminas-db-profiler.global.php.dist``` file. If you want to change the default ones, copy it in your ```config/autoload``` directory, remove the ```.dist``` extension and edit it.
+Configuration options are available in ```config/laminas-db-profiler.global.php.dist``` file. If you want to change the default ones, copy it in your ```config/autoload``` directory, remove the ```.dist``` extension and edit it.
 
 Options available :
 
