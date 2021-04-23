@@ -1,9 +1,9 @@
 <?php
-namespace StfnLaminasDbProfiler\Options\Service;
+namespace LaminasDbProfiler\Options\Service;
 
 use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
-use StfnLaminasDbProfiler\Options\ModuleOptions;
+use LaminasDbProfiler\Options\ModuleOptions;
 
 class ModuleOptionsFactory
     implements FactoryInterface
@@ -17,6 +17,6 @@ class ModuleOptionsFactory
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null) : ModuleOptions
     {
         $config = $container->get('Config');
-        return new ModuleOptions($config['stfn_laminas_db_profiler'] ?? []);
+        return new ModuleOptions($config['laminas_db_profiler'] ?? []);
     }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace StfnLaminasDbProfiler;
+namespace LaminasDbProfiler;
 
 use Laminas\ModuleManager\Feature\ConfigProviderInterface;
 use Laminas\ModuleManager\Feature\DependencyIndicatorInterface;

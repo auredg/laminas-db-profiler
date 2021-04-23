@@ -1,10 +1,10 @@
 <?php
-namespace StfnLaminasDbProfiler\Collector\Service;
+namespace LaminasDbProfiler\Collector\Service;
 
 use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
-use StfnLaminasDbProfiler\Collector\DbCollector;
-use StfnLaminasDbProfiler\Options\ModuleOptions;
+use LaminasDbProfiler\Collector\DbCollector;
+use LaminasDbProfiler\Options\ModuleOptions;
 
 class DbCollectorFactory
     implements FactoryInterface

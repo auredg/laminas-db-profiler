@@ -1,5 +1,5 @@
 {
-    "name": "aureliendoignon/stfn-laminas-db-profiler",
+    "name": "aure/laminas-db-profiler",
     "description": "A Laminas module to profile db queries using Laminas\\Db\\Adapter\\Profiler\\Profiler and write them to Laminas\\DeveloperTools toolbar.",
     "version": "0.3.0",
     "license": "BSD-3-Clause",
@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-			"StfnLaminasDbProfiler\\": "src/StfnLaminasDbProfiler/"
+			"LaminasDbProfiler\\": "src/LaminasDbProfiler/"
 		}
     }
 }

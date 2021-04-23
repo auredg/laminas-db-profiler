@@ -1,5 +1,5 @@
 <?php
-namespace StfnLaminasDbProfiler\Collector;
+namespace LaminasDbProfiler\Collector;
 
 use Laminas\Mvc\MvcEvent;
 use Laminas\Db\Adapter\Profiler\Profiler;
@@ -12,7 +12,7 @@ class DbCollector
 
     public function getName() : string
     {
-        return 'StfnLaminasDbProfiler';
+        return 'LaminasDbProfiler';
     }
 
     public function getPriority() : int

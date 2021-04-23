@@ -2,10 +2,10 @@
 
 use Laminas\Db\Adapter\Adapter;
 
-use StfnLaminasDbProfiler\Collector\DbCollector;
-use StfnLaminasDbProfiler\Options\ModuleOptions;
-use StfnLaminasDbProfiler\Collector\Service\DbCollectorFactory;
-use StfnLaminasDbProfiler\Options\Service\ModuleOptionsFactory;
+use LaminasDbProfiler\Collector\DbCollector;
+use LaminasDbProfiler\Options\ModuleOptions;
+use LaminasDbProfiler\Collector\Service\DbCollectorFactory;
+use LaminasDbProfiler\Options\Service\ModuleOptionsFactory;
 
 return [
     'service_manager' => [
@@ -16,22 +16,22 @@ return [
     ],
     'view_manager' => [
         'template_map' => [
-            'stfn-laminas-db-profiler/toolbar/db' => __DIR__ . '/../view/stfn-laminas-db-profiler/toolbar/db.phtml',
+            'laminas-db-profiler/toolbar/db' => __DIR__ . '/../view/laminas-db-profiler/toolbar/db.phtml',
         ],
     ],
     'laminas-developer-tools' => [
         'profiler' => [
             'collectors' => [
-                'StfnLaminasDbProfiler' => DbCollector::class,
+                'LaminasDbProfiler' => DbCollector::class,
             ],
         ],
         'toolbar' => [
             'entries' => [
-                'StfnLaminasDbProfiler' => 'stfn-laminas-db-profiler/toolbar/db',
+                'LaminasDbProfiler' => 'laminas-db-profiler/toolbar/db',
             ],
         ],
     ],
-    'stfn_laminas_db_profiler' => [
+    'laminas_db_profiler' => [
         'dbAdapterServiceManagerKey' => Adapter::class,
     ],
 ];
